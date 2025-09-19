@@ -12,3 +12,29 @@ class Animal {
         console.log("Generic animal sound");
     }
 }
+
+// constructor là một phương thức đặc biệt được gọi khi một đối tượng mới của class được
+// tạo ra. Nó được sử dụng để khởi tạo các thuộc tính của đối tượng.
+
+
+
+// Kế thừa
+// Tính kế thừa: giúp tạo ra các class con từ class cha, giảm thiểu được việc lặp lại code và tăng
+// tính linh hoạt trong code.
+
+class Dog extends Animal {
+breed: string;
+constructor(name: string, breed: string) {
+super(name); // Gọi constructor của lớp cha
+this.breed = breed;
+}
+makeSound() {
+console.log("Woof!"); // Ghi đè phương thức của lớp cha
+}
+wagTail() {
+console.log("Wagging tail");
+}
+}
+const myDog = new Dog("Buddy", "Golden Retriever");
+myDog.makeSound(); // Woof!
+myDog.wagTail(); // Wagging tail
